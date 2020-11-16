@@ -35,12 +35,12 @@ BULK INSERT  tableau..airbnb_nyc
 	  TABLOCK);
 
 /*
-CREATE LOGIN cblock WITH PASSWORD = 'tau46bFw';
+CREATE LOGIN  WITH PASSWORD = '';
 
-create user cblock for login cblock
+create user  for login 
 
 USE tableau
 GO
-Grant select on airbnb_nyc to cblock
+Grant select on airbnb_nyc to 
 */
 
