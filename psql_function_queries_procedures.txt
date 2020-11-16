@@ -1,0 +1,31 @@
+#shell script 
+loadBankOZKStatement.sh
+
+#Functions
+runpostgresscript.sh "SELECT * FROM cashflowbankozkcurrentyear('2020-09-10','2020-09-13')"
+runpostgresscript.sh "SELECT * FROM functionInformation()"
+runpostgresscript.sh "SELECT * FROM currentBalanceAmex()"
+runpostgresscript.sh "SELECT * FROM countDupesBankOZK()"
+runpostgresscript.sh "SELECT * FROM currentBalanceBankOZK()"
+runpostgresscript.sh "SELECT * FROM procedureInformation()"
+
+#Procedures
+runpostgresscript.sh "CALL createAmex()"
+runpostgresscript.sh "CALL createBankOZKLookup()"
+runpostgresscript.sh "CALL dedupAmex()"
+runpostgresscript.sh "CALL dedupBankOZK()"
+runpostgresscript.sh "CALL loadAmex()" 
+runpostgresscript.sh "CALL loadBankOZKLookup()" #should be COPY
+runpostgresscript.sh "CALL transformBankOZK()"
+runpostgresscript.sh "CALL exportBankOZKTransform()" #csv written to /home/ec2-user/sql directory
+
+#Adhoc SQL
+runpostgresscriptFile.sh bankOZKReportingDates.sql
+runpostgresscriptFile.sh showTables.sql
+
+
+#Explore tables 
+runpostgresscript.sh "SELECT * FROM bankozktransform"
+runpostgresscriptFile.sh cashFlowBankOZKYearFunction.sql
+
+

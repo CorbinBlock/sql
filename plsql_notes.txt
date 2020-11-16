@@ -1,0 +1,113 @@
+	CREATE OR REPLACE FUNCTION procedureInformation()
+	RETURNS TABLE (schema_name AS VARCHAR(100), specific_name AS VARCHAR(100),  language AS VARCHAR(100),   definition AS VARCHAR(500))
+	AS $$
+	BEGIN
+	            RETURN query
+	SELECT n.nspname AS schema_name,
+	     p.proname AS specific_name,
+	       l.lanname AS language,
+	       CASE WHEN l.lanname = 'internal' then p.prosrc
+	                    ELSE pg_get_functiondef(p.oid)
+	                                    end AS definition,
+	                                       pg_get_function_arguments(p.oid) AS arguments
+	                                from pg_proc p
+	                                LEFT JOIN pg_namespace n ON p.pronamespace = n.oid
+	                                LEFT JOIN pg_language l ON p.prolang = l.oid
+	                                LEFT JOIN pg_type t ON t.oid = p.prorettype
+	                                WHERE n.nspname not IN ('pg_catalog', 'information_schema')
+	                                      AND p.prokINd = 'p'
+	                                ORDER BY schema_name,
+	                                         specific_name;
+	End
+$$ language plpgsql;
+
+
+	CREATE OR REPLACE FUNCTION viewTable(tablename text)
+	RETURNS TABLE (table_name name, column_name name, data_type name)
+	AS $$
+	BEGIN
+	            RETURN query
+	SELECT
+	    information_schema.table_name,
+	    information_schema.column_name,
+	    information_schema.data_type
+	FROM
+	   information_schema.columns
+	WHERE
+	    information_schema.table_name = tablename;
+	End
+$$ language plpgsql;
+
+CREATE OR REPLACE FUNCTION countDupesBankOZK()
+RETURNS TABLE (dupeCount int)
+AS $$
+BEGIN
+RETURN query
+SELECT COUNT(recordid) AS DUPECOUNT 
+FROM 
+(SELECT recordid, ROW_NUMBER() OVER (partition BY amount, description, balance ORDER BY loaddate) AS rnum FROM bankozk) t 
+WHERE t.rnum > 1
+END;
+$$ language plpgsql;
+
+SELECT max(bankozk.recordid), bankozk.date, bankozk.balance FROM bankozk WHERE bankozk.date > CURRENT_DATE - 7 OR WHERE bankozk.date < CURRENT_DATE + 7 GROUP BY 2,3
+
+
+
+SELECT 
+   table_name, 
+   column_name, 
+   data_type 
+FROM 
+   information_schema.columns
+WHERE 
+   table_name = 'bankozk';
+   
+   CREATE PROCEDURE loadAmex()
+LANGUAGE SQL
+AS $$
+\COPY amex(Date,Description,Amount) FROM '/home/ec2-user/sql/activity.csv' DELIMITER ',' CSV HEADER;
+$$;
+
+CREATE PROCEDURE dedupBankOZK()
+LANGUAGE SQL
+AS $$
+DELETE FROM bankozk
+WHERE recordid IN (SELECT recordid
+              FROM (SELECT recordid,
+                           ROW_NUMBER() OVER (partition BY amount, description, balance ORDER BY loaddate) AS rnum
+                      FROM bankozk) t
+                      WHERE t.rnum > 1);
+					  $$;
+					  
+					  
+					  SELECT SUM(amount) FROM amex
+					  
+					  
+					  SELECT COUNT(recordid) FROM (SELECT recordid, ROW_NUMBER() OVER (partition BY amount, description, balance ORDER BY loaddate) AS rnum FROM bankozk) t WHERE t.rnum > 1
+					  
+					  
+					  #!/bin/bash
+sudo -u postgres -H -- psql -c "
+DELETE FROM bankozk
+WHERE recordid IN (SELECT recordid
+              FROM (SELECT recordid,
+                           ROW_NUMBER() OVER (partition BY amount, description, balance ORDER BY loaddate) AS rnum
+                      FROM bankozk) t
+                      WHERE t.rnum > 1);
+					  
+					  
+					  \COPY bankOZKLookup(LOOKUP,LOOKUPEXTENDED,TRANSACTIONTYPE,ORIGINALDESCRIPTION,TRANSACTIONTYPEDETAIL) FROM '/home/ec2-user/sql/bankOZKLookup.csv' DELIMITER ',' CSV HEADER;
+					  
+					  
+					  CREATE TABLE bankOZKLookup (
+	recordid       									serial,
+	loaddate       									date default current_date,
+	lookup											varchar(50),		
+	lookupextended									varchar(50),		
+	transactiontype									varchar(50),		
+	originaldescription								varchar(50),		
+	transactiontypedetail							varchar(50)
+	};
+
+22 22 */2 * * rsync -u -t -av /mnt/c/Evernote/Databases/myName.exb /mnt/c/Dropbox/EvernoteDB/myName.exb > /dev/null
