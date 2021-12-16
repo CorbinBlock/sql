@@ -1,0 +1,1 @@
+SELECT * FROM sandbox_db..bank
