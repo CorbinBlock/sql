@@ -1,5 +1,5 @@
 DROP DATABASE IF EXISTS sandbox;
-CREATE DATABASE sandbox; 
+CREATE DATABASE sandbox owner postgres; 
 
 DROP TABLE IF EXISTS netflix;
 CREATE TABLE netflix
@@ -14,12 +14,3 @@ CREATE TABLE netflix
    volume VARCHAR(40) NOT NULL,
    PRIMARY KEY ( stock_id )
 );
-
-LOAD DATA INFILE 'c:/tmp/netflix.csv' 
-INTO TABLE sandbox.netflix 
-FIELDS TERMINATED BY ',' 
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
-
--- SQL Error [3948] [42000]: Loading local data is disabled; this must be enabled on both the client and server sides
