@@ -1,0 +1,1 @@
+select * From information_schema.tables

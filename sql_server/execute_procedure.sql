@@ -1,0 +1,1 @@
+EXEC query_bank;
