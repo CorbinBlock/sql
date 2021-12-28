@@ -1,1 +1,1 @@
-venv\Scripts\activate
+C:\git\sql\postgres\docker_project\venv\Scripts\activate
