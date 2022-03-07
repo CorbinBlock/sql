@@ -11,20 +11,20 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{9BEB3E00-1AD7-4B18-BE43-B4466D06B731}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{0248FE50-0A6E-496F-A38C-A6227D761635}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Execute Process Task"
+      DTS:refId="Package\sync_s3_bucket"
       DTS:CreationName="Microsoft.ExecuteProcess"
       DTS:Description="Execute Process Task"
       DTS:DTSID="{16823311-D31C-4684-A230-D4C1CC06905D}"
       DTS:ExecutableType="Microsoft.ExecuteProcess"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Process Task"
+      DTS:ObjectName="sync_s3_bucket"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
@@ -32,8 +32,26 @@
         <ExecuteProcessData
           Executable="C:\Program Files\PowerShell\7\pwsh.exe"
           RequireFullFileName="False"
-          Arguments="-Command  &quot;Get-ChildItem &amp;&amp; pause&quot;"
+          Arguments="-Command  &quot;Sync-S3Bucket &amp;&amp; pause&quot;"
           WorkingDirectory="C:\Users\Administrator" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\update_unix"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{4292fdbd-92aa-4e4a-bfdd-39c46bce8cd0}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="update_unix"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Program Files\PowerShell\7\pwsh.exe"
+          RequireFullFileName="False"
+          Arguments="-Command  &quot;cd $env:python/os &amp;&amp; python update_nodes.py &amp;&amp; pause&quot;" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -51,8 +69,12 @@
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="188,42"
-          Id="Package\Execute Process Task"
+          Id="Package\sync_s3_bucket"
           TopLeft="24.5,107.5" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\update_unix"
+          TopLeft="338,102" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
