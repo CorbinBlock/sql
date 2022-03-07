@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{0248FE50-0A6E-496F-A38C-A6227D761635}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{BB459873-36AD-4D22-BE91-1560447278F2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -26,7 +26,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="sync_s3_bucket"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -45,13 +45,31 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="update_unix"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
           Executable="C:\Program Files\PowerShell\7\pwsh.exe"
           RequireFullFileName="False"
           Arguments="-Command  &quot;cd $env:python/os &amp;&amp; python update_nodes.py &amp;&amp; pause&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\workout_timer"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{c2b00c12-401f-476d-813c-5e8325c21930}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="workout_timer"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Program Files\PowerShell\7\pwsh.exe"
+          RequireFullFileName="False"
+          Arguments="-Command  &quot;Get-Stopwatch 15 120 4 &amp;&amp; pause&quot;" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -68,13 +86,17 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="188,42"
+          Size="164,42"
           Id="Package\sync_s3_bucket"
           TopLeft="24.5,107.5" />
         <NodeLayout
           Size="139,42"
           Id="Package\update_unix"
-          TopLeft="338,102" />
+          TopLeft="39,205" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\workout_timer"
+          TopLeft="30.5,296" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
