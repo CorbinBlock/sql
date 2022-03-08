@@ -11,12 +11,102 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{69731D28-C004-4B57-AD0F-4FDA6B5064EE}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{1ED14B04-3EDC-4DC8-BE2D-7006ED5EC40B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\get_admin_creds"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{3da3a296-f9dc-46d1-857b-4fe778b21946}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="get_admin_creds"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="4">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Program Files\PowerShell\7\pwsh.exe"
+          RequireFullFileName="False"
+          Arguments="-Command  &quot;Get-Creds admin&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\get_ad_creds"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{ccdeebc0-07b3-4d2f-af43-be4023aacd9e}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="get_ad_creds"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Program Files\PowerShell\7\pwsh.exe"
+          RequireFullFileName="False"
+          Arguments="-Command  &quot;Get-Creds ad&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\get_git_creds"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{82ac438e-e8eb-44f9-90e1-97a33bc3ea27}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="get_git_creds"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Program Files\PowerShell\7\pwsh.exe"
+          RequireFullFileName="False"
+          Arguments="-Command  &quot;Get-Creds git&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\start_programs"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{2db2f5e0-2c9c-4d6d-aaa1-dba13986d237}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="start_programs"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Program Files\PowerShell\7\pwsh.exe"
+          RequireFullFileName="False"
+          Arguments="-Command  &quot;Start-Programs&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\stop_programs"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{e97112e1-4b98-4a2e-a93d-8326c7ee19d2}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="stop_programs"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Program Files\PowerShell\7\pwsh.exe"
+          RequireFullFileName="False"
+          Arguments="-Command  &quot;Stop-Programs&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\sync_s3_bucket"
       DTS:CreationName="Microsoft.ExecuteProcess"
@@ -26,7 +116,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="sync_s3_bucket"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -45,7 +135,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="update_unix"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="6">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -63,7 +153,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="workout_timer"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="7">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -84,19 +174,39 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="188,42"
+          Size="164,42"
           Id="Package\sync_s3_bucket"
-          TopLeft="24.5,107.5" />
+          TopLeft="28.5,107.5" />
         <NodeLayout
           Size="139,42"
           Id="Package\update_unix"
-          TopLeft="31,195" />
+          TopLeft="43,205" />
         <NodeLayout
           Size="156,42"
           Id="Package\workout_timer"
-          TopLeft="25.5,296" />
+          TopLeft="34.5,296" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\get_ad_creds"
+          TopLeft="35,399" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\get_admin_creds"
+          TopLeft="32,481" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\get_git_creds"
+          TopLeft="30,561" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\start_programs"
+          TopLeft="39,629" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\stop_programs"
+          TopLeft="44.5,715" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
