@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{67B3E113-A8D9-4A67-BF18-1A6679F0C820}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{0570B83A-D3DB-4B45-95FC-C47F42192592}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -26,7 +26,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="enter_unix_01_debian"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -44,7 +44,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="enter_unix_02_fedora"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="10">
+      DTS:ThreadHint="7">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -62,7 +62,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="get_admin_creds"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="8">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -80,7 +80,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="get_ad_creds"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="9">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -98,7 +98,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="get_git_creds"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="10">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -116,7 +116,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="restart_computer"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -134,7 +134,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="start_programs"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -152,7 +152,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="stop_programs"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="6">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -170,7 +170,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="sync_s3_bucket"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="7">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -189,7 +189,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="update_unix"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="8">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -207,7 +207,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="workout_timer"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="9">
+      DTS:ThreadHint="6">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -233,6 +233,10 @@
           Size="188,42"
           Id="Package\enter_unix_01_debian"
           TopLeft="301,193" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\enter_unix_02_fedora"
+          TopLeft="301,302" />
         <NodeLayout
           Size="156,42"
           Id="Package\get_ad_creds"
@@ -269,10 +273,6 @@
           Size="156,42"
           Id="Package\workout_timer"
           TopLeft="43.5,194" />
-        <NodeLayout
-          Size="186,42"
-          Id="Package\enter_unix_02_fedora"
-          TopLeft="301,302" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
