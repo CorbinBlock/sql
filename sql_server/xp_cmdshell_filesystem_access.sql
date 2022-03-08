@@ -1,6 +1,6 @@
 declare @dos varchar(100) 
---set @dos = 'pwsh.exe -c "cd C:\Users\Corbin\vs_code_projects\documents_internal\util_powershell; ls; .\get_secrets.ps1 ad"'
-set @dos = 'whoami'
+--set @dos = 'pwsh.exe -c "cd C:\Users\Corbin\vs_code_projects\documents_internal\util_powershell; .\get_secrets.ps1 ad"'
+-- set @dos = 'pwsh.exe -c "Enter-Pycharm"'
 
 EXECUTE master..xp_cmdshell @dos
 
