@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{2C2C129B-0B35-4A62-86FC-C5511A053160}">
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{5F3EFBCD-5A81-41AB-8F8D-2FC9FB5F2773}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -26,13 +26,31 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="enter_unix_01_debian"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
           Executable="C:\Program Files\PowerShell\7\pwsh.exe"
           RequireFullFileName="False"
           Arguments="-Command  &quot;Enter-UNIX-01  &amp;&amp; pause&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\enter_unix_02_fedora"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{299c25a6-3183-4d4c-bb56-839b348dab74}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="enter_unix_02_fedora"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="4">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Program Files\PowerShell\7\pwsh.exe"
+          RequireFullFileName="False"
+          Arguments="-Command  &quot;Enter-UNIX-02  &amp;&amp; pause&quot;" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -44,7 +62,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="get_admin_creds"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="6">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -62,7 +80,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="get_ad_creds"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="7">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -80,7 +98,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="get_git_creds"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -98,7 +116,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="restart_computer"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="6">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -116,7 +134,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="start_programs"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="7">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -134,7 +152,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="stop_programs"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="8">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -152,7 +170,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="sync_s3_bucket"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="9">
+      DTS:ThreadHint="8">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -171,7 +189,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="update_unix"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="9">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -189,7 +207,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="workout_timer"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="10">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecuteProcessData
@@ -211,6 +229,10 @@
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\enter_unix_01_debian"
+          TopLeft="301,193" />
         <NodeLayout
           Size="156,42"
           Id="Package\get_ad_creds"
@@ -249,8 +271,8 @@
           TopLeft="43.5,194" />
         <NodeLayout
           Size="188,42"
-          Id="Package\enter_unix_01_debian"
-          TopLeft="301,193" />
+          Id="Package\enter_unix_02_fedora"
+          TopLeft="301,302" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
