@@ -26,11 +26,12 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">WIN-01-LENOVO</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3LRVVpNsZEaOkCubrXn8mQAAAAACAAAAAAAQZgAAAAEAACAAAADVNIVpnrk+0nz0NUdDtIC3szMH344b99aoXE0WnWciqAAAAAAOgAAAAAIAACAAAADcBUD/pmLgLc43JrMSPLDELEEHzy46/i3EL/HLDzQPnZAAAABxV4movLo1snzmbqj6pFCO/iaeaYnE2ngLvPWz3a8VjYhnnykL0b7zSlaMFKqoZsNpWxGlut1rzbb0toMn7b0xGz9wvA0OCqatK5QkeF8E34HbJlbtQ+N1JbiIySr1mdDInu24QDdl9r+S+QHtNykIfbNQkK21NLP/Gwm2lEEvwVYolt3fLlAodSDuDCsmBARAAAAAIbWv5vcwRjnaSNACE+kjjZTYnxPP6vbRfZv2gqgTpGJxGoh3Yxtz8pmbDUzBygGiCMZqLUhtPjpApFTi81VwIQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAARGpMmABaRUqpoY3b/ZD87QAAAAACAAAAAAAQZgAAAAEAACAAAADYgnpnoSGywfIFTSf3glMSU7ZUIbiTI0z7a5j3dYC9hQAAAAAOgAAAAAIAACAAAAAUvA3LBOaVXQSfwSCqQSGMHGoQED8OgY0Pdykhy3I4a5AAAACa5Q8NSVvX5IX94Eyw9A8MB3TUCUpXpUYxvnrA43rfu/4ESCyEtpeeChG/SnIvKYxYROviNtReE+Cpn9tbKr6e1B8RaTe29gd1w8IWmBYTPbDjgGPs/8wykKHVn9Zx08Am9lp8irJaRDJZEj5E9d9DPOHbC6c12184zZtU2VIfb6Utp7koHN5JLyvwnJl8te5AAAAAWNDy0n/WD72DEy3AEkQez93aKE3Z/kaehnFUN/MbwRrPdzxqdT0zXkYuIp6xAbxpmGb1Uw0/3urGxdXqS1aRpA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="Package.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="WIN-01-LENOVO_dev.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="WIN-01-LENOVO.SSISDB.conmgr" />
@@ -346,6 +347,23 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{67B3E113-A8D9-4A67-BF18-1A6679F0C820}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="WIN-01-LENOVO_dev.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{5A827069-2BCA-4684-8F93-F295E2638384}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">28</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E81AC955-E176-4517-A6E8-F9F13FFFD0A3}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
