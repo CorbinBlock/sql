@@ -1,8 +1,15 @@
-declare @dos varchar(100) 
---set @dos = 'pwsh.exe -c "cd C:\Users\Corbin\vs_code_projects\documents_internal\util_powershell; .\get_secrets.ps1 ad"'
--- set @dos = 'pwsh.exe -c "Enter-Pycharm"'
+DECLARE @shell varchar(50)
+DECLARE @cmd varchar(500)
+DECLARE @option varchar(5)
+DECLARE @command_string varchar(500)
 
-EXECUTE master..xp_cmdshell @dos
+SET @cmd = '"Get-CimInstance -ClassName win32_operatingsystem | Select-Object csname, lastbootuptime"'
+
+SET @shell = 'pwsh.exe'
+SET @option = '-c' 
+SET @command_string = @shell + ' ' + @option + ' ' + @cmd
+
+EXECUTE master..xp_cmdshell @command_string
 
 /*
 
