@@ -1,0 +1,29 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-17fb2184dba-2ebf9c15099d17f9": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "WIN-01-LENOVO - sqlite",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\Program Files\\IPBan\\ipban.sqlite",
+				"url": "jdbc:sqlite:C:\\Program Files\\IPBan\\ipban.sqlite",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}
