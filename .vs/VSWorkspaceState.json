@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\sql_server"
   ],
-  "SelectedNode": "\\ssis",
+  "SelectedNode": "\\sql_server\\xp_cmdshell_filesystem_access.sql",
   "PreviewInSolutionExplorer": false
 }
